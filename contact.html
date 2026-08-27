@@ -104,39 +104,27 @@
     <div class="form-card gs-reveal" id="enquire">
       <h2 class="form-title">Request your free quote</h2>
       <p class="form-sub">Takes 30 seconds. We call back within <strong>2 business hours</strong> (Mon–Fri).</p>
-      <!-- ============ GHL EMBED SLOT (main enquiry form) ============
-           This native form is a styled stand-in optimised for Google Ads
-           conversions. To switch to the GoHighLevel form, replace the
-           <form> below with:
-             <div class="ghl-slot">
-               <iframe src="YOUR_GHL_FORM_URL" id="ghl-inline-form"
-                       title="MVS Connect enquiry form"></iframe>
-             </div>
-           and keep the thank-you redirect inside GHL set to /thank-you
-           so the Ads conversion still fires.
-           ============================================================ -->
-      <form class="form-grid" data-lead-form data-thanks="/thank-you" id="contact-form">
-        <div><label for="c-name">Name *</label><input id="c-name" name="name" type="text" autocomplete="name" required placeholder="Your name"></div>
-        <div class="row-2">
-          <div><label for="c-phone">Phone *</label><input id="c-phone" name="phone" type="tel" autocomplete="tel" required placeholder="04xx xxx xxx"></div>
-          <div><label for="c-email">Email *</label><input id="c-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
-        </div>
-        <div><label for="c-suburb">Suburb / town</label><input id="c-suburb" name="suburb" type="text" autocomplete="address-level2" placeholder="e.g. Wynyard"></div>
-        <div><label for="c-job">Type of job</label>
-          <select id="c-job" name="job">
-            <option>Home / domestic electrical</option>
-            <option>Commercial work</option>
-            <option>Machinery fault / breakdown</option>
-            <option>Pumps, sheds &amp; rural</option>
-            <option>Solar inverter</option>
-            <option>Fibre / security cameras / telemetry</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div><label for="c-msg">Tell us about it</label><textarea id="c-msg" name="message" rows="4" placeholder="What's happening, and roughly where you are"></textarea></div>
-        <button class="btn btn-primary btn-lg" type="submit">Send my enquiry <span class="arrow">→</span></button>
-        <p class="form-fine">By sending this form you agree to our <a href="/privacy-policy">privacy policy</a>. No spam, no reselling your details — just a call back from Mark.</p>
-      </form>
+      <!-- GHL inline enquiry form -->
+      <iframe
+          src="https://api.leadconnectorhq.com/widget/form/RihSWQxne8E76hvKQN94"
+          style="width:100%;min-height:1191px;height:1191px;border:none;border-radius:8px"
+          id="inline-RihSWQxne8E76hvKQN94"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="MVS Connect Website Form EMBED"
+          data-height="1191"
+          data-layout-iframe-id="inline-RihSWQxne8E76hvKQN94"
+          data-form-id="RihSWQxne8E76hvKQN94"
+          data-cookie-consent="true"
+          data-cookie-consent-provider="auto"
+          title="MVS Connect Website Form EMBED">
+      </iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     </div>
 
     <div class="contact-info gs-reveal">
@@ -216,44 +204,6 @@
 
 </main>
 
-<!-- Enquiry popup — shows once per session on first visit -->
-<div class="popup-overlay" id="enquiry-popup" data-auto="off" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-  <div class="popup">
-    <button class="popup-close" data-popup-close aria-label="Close enquiry popup">&times;</button>
-    <div class="popup-head">
-      <h3 id="popup-title">Need an electrician on the North-West Coast?</h3>
-      <p>Tell us what's going on — Mark calls back within 2 business hours.</p>
-    </div>
-    <div class="popup-body">
-      <!-- ============ GHL EMBED SLOT (popup) ============
-           Replace the native form below with the GoHighLevel form embed:
-           <div class="ghl-slot"><iframe src="YOUR_GHL_FORM_URL" ...></iframe></div>
-           ================================================= -->
-      <form class="form-grid" data-lead-form data-thanks="/thank-you" id="popup-form">
-        <div><label for="p-name">Name</label><input id="p-name" name="name" type="text" autocomplete="name" required placeholder="Your name"></div>
-        <div class="row-2">
-          <div><label for="p-phone">Phone</label><input id="p-phone" name="phone" type="tel" autocomplete="tel" required placeholder="04xx xxx xxx"></div>
-          <div><label for="p-email">Email</label><input id="p-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
-        </div>
-        <div><label for="p-job">What do you need?</label>
-          <select id="p-job" name="job">
-            <option>Home / domestic electrical</option>
-            <option>Commercial work</option>
-            <option>Machinery fault</option>
-            <option>Pumps, sheds &amp; rural</option>
-            <option>Solar inverter</option>
-            <option>Fibre / cameras / telemetry</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <button class="btn btn-primary btn-lg" type="submit">Request my free quote</button>
-        <p class="form-fine">No obligation. No call-centre. You'll hear from Mark directly.</p>
-      </form>
-    </div>
-  </div>
-</div>
-
-
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -305,5 +255,49 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <script src="site.js"></script>
+
+<!-- GHL popup: shows once, on the first page a visitor lands on. Never on /contact or /thank-you. -->
+<script>
+(function () {
+  var p = location.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
+  if (p === "/contact" || p === "/thank-you") return;
+  try {
+    if (localStorage.getItem("ghl_popup_seen")) return;
+    localStorage.setItem("ghl_popup_seen", "1");
+  } catch (e) { return; }
+  var f = document.createElement("iframe");
+  f.src = "https://api.leadconnectorhq.com/widget/form/evC4h2VFgsm7ynYPf5Ms";
+  f.style.cssText = "display:none;width:100%;height:100%;border:none;border-radius:8px";
+  f.id = "popup-evC4h2VFgsm7ynYPf5Ms";
+  f.title = "MVS Connect Website Form POPUP";
+  var attrs = {
+    "data-layout": "{'id':'POPUP'}",
+    "data-trigger-type": "alwaysShow",
+    "data-trigger-value": "",
+    "data-activation-type": "alwaysActivated",
+    "data-activation-value": "",
+    "data-deactivation-type": "neverDeactivate",
+    "data-deactivation-value": "",
+    "data-form-name": "MVS Connect Website Form POPUP",
+    "data-height": "1157",
+    "data-layout-iframe-id": "popup-evC4h2VFgsm7ynYPf5Ms",
+    "data-form-id": "evC4h2VFgsm7ynYPf5Ms",
+    "data-cookie-consent": "true",
+    "data-cookie-consent-provider": "auto",
+    "data-modal-height": "500"
+  };
+  for (var k in attrs) f.setAttribute(k, attrs[k]);
+  document.body.appendChild(f);
+  var s = document.createElement("script");
+  s.src = "https://link.msgsndr.com/js/form_embed.js";
+  document.body.appendChild(s);
+})();
+</script>
+
+<!-- GHL tracking -->
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_0498689825a74b02a565443ab84d1f7d">
+</script>
 </body>
 </html>

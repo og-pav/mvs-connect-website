@@ -152,44 +152,6 @@
 </section>
 </main>
 
-<!-- Enquiry popup — shows once per session on first visit -->
-<div class="popup-overlay" id="enquiry-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
-  <div class="popup">
-    <button class="popup-close" data-popup-close aria-label="Close enquiry popup">&times;</button>
-    <div class="popup-head">
-      <h3 id="popup-title">Need an electrician on the North-West Coast?</h3>
-      <p>Tell us what's going on — Mark calls back within 2 business hours.</p>
-    </div>
-    <div class="popup-body">
-      <!-- ============ GHL EMBED SLOT (popup) ============
-           Replace the native form below with the GoHighLevel form embed:
-           <div class="ghl-slot"><iframe src="YOUR_GHL_FORM_URL" ...></iframe></div>
-           ================================================= -->
-      <form class="form-grid" data-lead-form data-thanks="/thank-you" id="popup-form">
-        <div><label for="p-name">Name</label><input id="p-name" name="name" type="text" autocomplete="name" required placeholder="Your name"></div>
-        <div class="row-2">
-          <div><label for="p-phone">Phone</label><input id="p-phone" name="phone" type="tel" autocomplete="tel" required placeholder="04xx xxx xxx"></div>
-          <div><label for="p-email">Email</label><input id="p-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"></div>
-        </div>
-        <div><label for="p-job">What do you need?</label>
-          <select id="p-job" name="job">
-            <option>Home / domestic electrical</option>
-            <option>Commercial work</option>
-            <option>Machinery fault</option>
-            <option>Pumps, sheds &amp; rural</option>
-            <option>Solar inverter</option>
-            <option>Fibre / cameras / telemetry</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <button class="btn btn-primary btn-lg" type="submit">Request my free quote</button>
-        <p class="form-fine">No obligation. No call-centre. You'll hear from Mark directly.</p>
-      </form>
-    </div>
-  </div>
-</div>
-
-
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -241,5 +203,49 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <script src="site.js"></script>
+
+<!-- GHL popup: shows once, on the first page a visitor lands on. Never on /contact or /thank-you. -->
+<script>
+(function () {
+  var p = location.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
+  if (p === "/contact" || p === "/thank-you") return;
+  try {
+    if (localStorage.getItem("ghl_popup_seen")) return;
+    localStorage.setItem("ghl_popup_seen", "1");
+  } catch (e) { return; }
+  var f = document.createElement("iframe");
+  f.src = "https://api.leadconnectorhq.com/widget/form/evC4h2VFgsm7ynYPf5Ms";
+  f.style.cssText = "display:none;width:100%;height:100%;border:none;border-radius:8px";
+  f.id = "popup-evC4h2VFgsm7ynYPf5Ms";
+  f.title = "MVS Connect Website Form POPUP";
+  var attrs = {
+    "data-layout": "{'id':'POPUP'}",
+    "data-trigger-type": "alwaysShow",
+    "data-trigger-value": "",
+    "data-activation-type": "alwaysActivated",
+    "data-activation-value": "",
+    "data-deactivation-type": "neverDeactivate",
+    "data-deactivation-value": "",
+    "data-form-name": "MVS Connect Website Form POPUP",
+    "data-height": "1157",
+    "data-layout-iframe-id": "popup-evC4h2VFgsm7ynYPf5Ms",
+    "data-form-id": "evC4h2VFgsm7ynYPf5Ms",
+    "data-cookie-consent": "true",
+    "data-cookie-consent-provider": "auto",
+    "data-modal-height": "500"
+  };
+  for (var k in attrs) f.setAttribute(k, attrs[k]);
+  document.body.appendChild(f);
+  var s = document.createElement("script");
+  s.src = "https://link.msgsndr.com/js/form_embed.js";
+  document.body.appendChild(s);
+})();
+</script>
+
+<!-- GHL tracking -->
+<script
+  src="https://link.msgsndr.com/js/external-tracking.js"
+  data-tracking-id="tk_0498689825a74b02a565443ab84d1f7d">
+</script>
 </body>
 </html>
