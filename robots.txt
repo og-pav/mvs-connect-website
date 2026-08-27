@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thank-you.html
 
-Sitemap: https://og-pav.github.io/mvs-connect-website/sitemap.xml
+Sitemap: https://mvsconnect.com.au/sitemap.xml

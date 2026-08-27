@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://og-pav.github.io/mvs-connect-website/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://og-pav.github.io/mvs-connect-website/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://og-pav.github.io/mvs-connect-website/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://og-pav.github.io/mvs-connect-website/case-studies.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://og-pav.github.io/mvs-connect-website/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://og-pav.github.io/mvs-connect-website/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://mvsconnect.com.au/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://mvsconnect.com.au/services.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mvsconnect.com.au/contact.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mvsconnect.com.au/case-studies.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mvsconnect.com.au/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mvsconnect.com.au/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
