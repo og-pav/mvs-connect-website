@@ -160,8 +160,10 @@
   var p = location.pathname.replace(/\.html$/, "").replace(/\/$/, "") || "/";
   if (p === "/contact" || p === "/thank-you") return;
   try {
-    if (localStorage.getItem("ghl_popup_seen")) return;
-    localStorage.setItem("ghl_popup_seen", "1");
+    // show once, then not again for 30 days on this device
+    var last = parseInt(localStorage.getItem("ghl_popup_seen") || "0", 10);
+    if (last > 1e12 && Date.now() - last < 30 * 864e5) return;
+    localStorage.setItem("ghl_popup_seen", String(Date.now()));
   } catch (e) { return; }
   var f = document.createElement("iframe");
   f.src = "https://api.leadconnectorhq.com/widget/form/evC4h2VFgsm7ynYPf5Ms";
