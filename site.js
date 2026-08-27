@@ -106,7 +106,7 @@
       /* TODO GHL: replace with GoHighLevel form submission / keep the GHL
          iframe embed instead. Redirecting to thank-you preserves the
          Google Ads conversion flow. */
-      w.location.href = form.dataset.thanks || "thank-you.html";
+      w.location.href = form.dataset.thanks || "/thank-you";
     });
   });
 
