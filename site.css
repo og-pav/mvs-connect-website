@@ -137,12 +137,21 @@ h3{font-size:clamp(1.15rem, 2vw, 1.5rem)}
 .mobile-menu{
   position:fixed;inset:0;z-index:950;background:linear-gradient(160deg,var(--ink) 0%,var(--ink-3) 100%);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;
+  padding:2rem 1.5rem;
   opacity:0;pointer-events:none;transition:opacity .35s ease;
 }
 .menu-open .mobile-menu{opacity:1;pointer-events:auto}
 .mobile-menu a{font-family:var(--ff-head);font-weight:700;font-size:1.5rem;color:#fff}
 .mobile-menu a.btn{font-size:1.1rem}
-.mobile-menu .mm-contact{color:var(--ice);font-size:.95rem;font-weight:500}
+.mobile-menu .mm-contact{
+  display:flex;flex-direction:column;align-items:center;gap:.55rem;
+  max-width:100%;text-align:center;color:var(--ice);font-weight:500;
+}
+.mobile-menu .mm-contact a{
+  font-family:var(--ff-body);font-size:1rem;font-weight:600;color:var(--ice);
+  max-width:100%;overflow-wrap:anywhere;
+}
+.mobile-menu .mm-contact .sep{display:none}
 
 /* ---------- Announcement ribbon ---------- */
 .ribbon{
